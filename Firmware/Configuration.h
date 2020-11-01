@@ -585,7 +585,8 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 200
+// Arnaud: Changed for filament Change
+#define EXTRUDE_MAXLENGTH 501
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -698,6 +699,7 @@
  */
 // Arnaud: Changed to activate TMC2209 Stepper drivers
 // Set TMC2209_STANDALONE for Z and E0 as no tunning is needed 
+// https://caggius.wordpress.com/anet-a8-hardware-specifications/
 #define X_DRIVER_TYPE  TMC2209
 #define Y_DRIVER_TYPE  TMC2209
 #define Z_DRIVER_TYPE  TMC2209_STANDALONE
@@ -765,7 +767,7 @@
 // Step Angle	: 1.8°
 // Lead Screw: M8
 // TMC2209 a 1/16
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 200, 48.12 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 200, 215.7 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1005,7 +1007,7 @@
  * Specify a Probe position as { X, Y, Z }
  */
 // Arnaud: Changed as per Mesured
-#define NOZZLE_TO_PROBE_OFFSET { -36, 0, -2.55 }
+#define NOZZLE_TO_PROBE_OFFSET { -36, 0, -2.35 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1158,9 +1160,9 @@
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 // Arnaud: Mesured after E3DV6 installation
-#define X_MIN_POS -15
+#define X_MIN_POS -17
 // Arnaud: Mesured after E3DV6 installation
-#define Y_MIN_POS -5
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
